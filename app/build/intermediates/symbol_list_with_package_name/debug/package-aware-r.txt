@@ -2636,6 +2636,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_entreeMenuFragment_to_sideMenuFragment
 id action_entreeMenuFragment_to_startOrderFragment
 id action_image
 id action_menu_divider
@@ -3014,6 +3015,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id sideMenuFragment
 id side_options
 id side_price
 id side_selection

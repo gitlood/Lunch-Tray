@@ -2635,6 +2635,7 @@ int id action_bar_title 0x7f08003d
 int id action_container 0x7f08003e
 int id action_context_bar 0x7f08003f
 int id action_divider 0x7f080040
+int id action_entreeMenuFragment_to_sideMenuFragment 0x7f080239
 int id action_entreeMenuFragment_to_startOrderFragment 0x7f080235
 int id action_image 0x7f080041
 int id action_menu_divider 0x7f080042
@@ -3013,6 +3014,7 @@ int id shortcut 0x7f0801b2
 int id showCustom 0x7f0801b3
 int id showHome 0x7f0801b4
 int id showTitle 0x7f0801b5
+int id sideMenuFragment 0x7f08023a
 int id side_options 0x7f0801b6
 int id side_price 0x7f0801b7
 int id side_selection 0x7f0801b8

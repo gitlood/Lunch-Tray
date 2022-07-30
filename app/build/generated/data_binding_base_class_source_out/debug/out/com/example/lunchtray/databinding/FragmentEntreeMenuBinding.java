@@ -80,6 +80,15 @@ public abstract class FragmentEntreeMenuBinding extends ViewDataBinding {
   @Bindable
   protected String mCauli;
 
+  @Bindable
+  protected String mChil;
+
+  @Bindable
+  protected String mPast;
+
+  @Bindable
+  protected String mSkille;
+
   protected FragmentEntreeMenuBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button cancelButton, RadioButton cauliflower, TextView cauliflowerDescription,
       TextView cauliflowerPrice, RadioButton chili, TextView chiliDescription, TextView chiliPrice,
@@ -125,6 +134,27 @@ public abstract class FragmentEntreeMenuBinding extends ViewDataBinding {
   @Nullable
   public String getCauli() {
     return mCauli;
+  }
+
+  public abstract void setChil(@Nullable String chil);
+
+  @Nullable
+  public String getChil() {
+    return mChil;
+  }
+
+  public abstract void setPast(@Nullable String past);
+
+  @Nullable
+  public String getPast() {
+    return mPast;
+  }
+
+  public abstract void setSkille(@Nullable String skille);
+
+  @Nullable
+  public String getSkille() {
+    return mSkille;
   }
 
   @NonNull

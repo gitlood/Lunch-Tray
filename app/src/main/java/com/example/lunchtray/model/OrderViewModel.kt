@@ -78,6 +78,7 @@ class OrderViewModel : ViewModel() {
         if (_subtotal.value != null) {
             _subtotal.value = _subtotal.value!! - previousEntreePrice
         }
+        print("FUCK ${_subtotal.value}")
 
         //  if _subtotal.value is not null subtract the previous entree price from the current
         //  subtotal value. This ensures that we only charge for the currently selected entree.
@@ -174,7 +175,7 @@ class OrderViewModel : ViewModel() {
         _entree.value = null
         _accompaniment.value = null
         _side.value = null
-        _subtotal.value = null
+    //    _subtotal = null
         _total.value = null
         // Reset all values associated with an order
     }

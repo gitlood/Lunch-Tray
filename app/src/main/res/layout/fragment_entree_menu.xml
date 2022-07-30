@@ -31,6 +31,18 @@
         <variable
             name="cauli"
             type="String" />
+
+        <variable
+            name="chil"
+            type="String" />
+
+        <variable
+            name="past"
+            type="String" />
+
+        <variable
+            name="skille"
+            type="String" />
     </data>
 
 
@@ -87,7 +99,8 @@
                     android:id="@+id/chili"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text='@{viewModel.menuItems["chili"].name}'
+                    android:onClick="@{()->viewModel.setEntree(chil)}"
+                    android:text='@{viewModel.menuItems[chili].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Entree 2" />
 
@@ -116,6 +129,7 @@
                     android:id="@+id/pasta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{()->viewModel.setEntree(past)}"
                     android:text='@{viewModel.menuItems["pasta"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Entree 3" />
@@ -145,6 +159,7 @@
                     android:id="@+id/skillet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{()->viewModel.setEntree(skille)}"
                     android:text='@{viewModel.menuItems["skillet"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Entree 4" />
@@ -185,7 +200,7 @@
             <Button
                 android:id="@+id/cancel_button"
                 style="@style/Widget.Order.Button.Cancel"
-                android:onClick="@{()->fragment.cancelOrder()}"
+                android:onClick="@{(view)->fragment.cancelOrder(view)}"
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/next_button" />
@@ -193,7 +208,7 @@
             <Button
                 android:id="@+id/next_button"
                 style="@style/Widget.Order.Button.Next"
-                android:onClick="@{()->fragment.goToNextScreen()}"
+                android:onClick="@{view->fragment.goToNextScreen(view)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/cancel_button"
