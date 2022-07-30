@@ -15,14 +15,13 @@
  */
 package com.example.lunchtray.model
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
+import com.example.lunchtray.R
 import com.example.lunchtray.data.DataSource
 import java.text.NumberFormat
 
-class OrderViewModel : ViewModel() {
+class OrderViewModel(application: Application) : AndroidViewModel(application) {
 
     // Map of menu items
     val menuItems = DataSource.menuItems
@@ -49,20 +48,26 @@ class OrderViewModel : ViewModel() {
 
     // Subtotal for the order
     private val _subtotal = MutableLiveData(0.0)
-    val subtotal: LiveData<String> = Transformations.map(_subtotal) {
-        NumberFormat.getCurrencyInstance().format(it)
+    val subtotal: LiveData<String> =
+    Transformations.map(_subtotal) {application.resources.getString(
+        R.string.subtotal,
+        NumberFormat.getCurrencyInstance().format(it))
     }
 
     // Total cost of the order
     private val _total = MutableLiveData(0.0)
     val total: LiveData<String> = Transformations.map(_total) {
-        NumberFormat.getCurrencyInstance().format(it)
+        application.resources.getString(
+            R.string.total,
+        NumberFormat.getCurrencyInstance().format(it))
     }
 
     // Tax for the order
     private val _tax = MutableLiveData(0.0)
     val tax: LiveData<String> = Transformations.map(_tax) {
-        NumberFormat.getCurrencyInstance().format(it)
+        application.resources.getString(
+            R.string.tax,
+        NumberFormat.getCurrencyInstance().format(it))
     }
 
     /**
@@ -163,7 +168,7 @@ class OrderViewModel : ViewModel() {
         _tax.value = _subtotal.value?.times(taxRate)
         // set _tax.value based on the subtotal and the tax rate.
 
-        _total.value = _subtotal.value!!.minus(_tax.value!!)
+        _total.value = _subtotal.value!!.plus(_tax.value!!)
         // set the total based on the subtotal and _tax.value.
     }
 
@@ -175,6 +180,7 @@ class OrderViewModel : ViewModel() {
         _accompaniment.value = null
         _side.value = null
         _subtotal.value = 0.0
+        _tax.value = 0.0
         _total.value = 0.0
         // Reset all values associated with an order
     }

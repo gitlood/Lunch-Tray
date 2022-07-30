@@ -44,12 +44,12 @@ class StartOrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentStartOrderBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.fragment = this@StartOrderFragment
+        val root: View = binding.root
+        // Navigate to entree menu
+        binding.startOrderBtn.setOnClickListener {
+            view!!.findNavController().navigate(R.id.action_startOrderFragment_to_entreeMenuFragment)
+        }
+        return root
     }
 
     /**
@@ -59,10 +59,5 @@ class StartOrderFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    fun onStartOrder(view: View) {
-        // Navigate to entree menu
-        view.findNavController().navigate(R.id.action_startOrderFragment_to_entreeMenuFragment)
     }
 }

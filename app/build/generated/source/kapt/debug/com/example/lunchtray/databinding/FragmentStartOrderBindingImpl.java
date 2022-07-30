@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 @SuppressWarnings("unchecked")
-public class FragmentStartOrderBindingImpl extends FragmentStartOrderBinding implements com.example.lunchtray.generated.callback.OnClickListener.Listener {
+public class FragmentStartOrderBindingImpl extends FragmentStartOrderBinding  {
 
     @Nullable
     private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
@@ -13,12 +13,11 @@ public class FragmentStartOrderBindingImpl extends FragmentStartOrderBinding imp
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = null;
+        sViewsWithIds = new android.util.SparseIntArray();
+        sViewsWithIds.put(R.id.start_order_btn, 1);
     }
     // views
     // variables
-    @Nullable
-    private final android.view.View.OnClickListener mCallback1;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -32,10 +31,8 @@ public class FragmentStartOrderBindingImpl extends FragmentStartOrderBinding imp
             , (android.widget.Button) bindings[1]
             );
         this.layoutStartOrder.setTag(null);
-        this.startOrderBtn.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback1 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -71,11 +68,6 @@ public class FragmentStartOrderBindingImpl extends FragmentStartOrderBinding imp
 
     public void setFragment(@Nullable com.example.lunchtray.ui.order.StartOrderFragment Fragment) {
         this.mFragment = Fragment;
-        synchronized(this) {
-            mDirtyFlags |= 0x1L;
-        }
-        notifyPropertyChanged(BR.fragment);
-        super.requestRebind();
     }
 
     @Override
@@ -92,33 +84,10 @@ public class FragmentStartOrderBindingImpl extends FragmentStartOrderBinding imp
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.example.lunchtray.ui.order.StartOrderFragment fragment = mFragment;
         // batch finished
-        if ((dirtyFlags & 0x2L) != 0) {
-            // api target 1
-
-            this.startOrderBtn.setOnClickListener(mCallback1);
-        }
     }
     // Listener Stub Implementations
     // callback impls
-    public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
-        // localize variables for thread safety
-        // fragment
-        com.example.lunchtray.ui.order.StartOrderFragment fragment = mFragment;
-        // fragment != null
-        boolean fragmentJavaLangObjectNull = false;
-
-
-
-        fragmentJavaLangObjectNull = (fragment) != (null);
-        if (fragmentJavaLangObjectNull) {
-
-
-
-            fragment.onStartOrder(callbackArg_0);
-        }
-    }
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping

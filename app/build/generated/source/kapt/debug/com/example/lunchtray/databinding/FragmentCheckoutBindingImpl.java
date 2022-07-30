@@ -22,7 +22,7 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
     private final android.widget.ScrollView mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback8;
+    private final android.view.View.OnClickListener mCallback6;
     @Nullable
     private final android.view.View.OnClickListener mCallback7;
     // values
@@ -63,8 +63,8 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
         this.total.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback8 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
-        mCallback7 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
+        mCallback6 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
+        mCallback7 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -341,8 +341,8 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
         if ((dirtyFlags & 0x100L) != 0) {
             // api target 1
 
-            this.cancelButton.setOnClickListener(mCallback8);
-            this.submitButton.setOnClickListener(mCallback7);
+            this.cancelButton.setOnClickListener(mCallback7);
+            this.submitButton.setOnClickListener(mCallback6);
         }
         if ((dirtyFlags & 0x184L) != 0) {
             // api target 1
@@ -376,24 +376,6 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
-                // localize variables for thread safety
-                // fragment
-                com.example.lunchtray.ui.order.CheckoutFragment fragment = mFragment;
-                // fragment != null
-                boolean fragmentJavaLangObjectNull = false;
-
-
-
-                fragmentJavaLangObjectNull = (fragment) != (null);
-                if (fragmentJavaLangObjectNull) {
-
-
-
-                    fragment.cancelOrder(callbackArg_0);
-                }
-                break;
-            }
             case 1: {
                 // localize variables for thread safety
                 // fragment
@@ -409,6 +391,24 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
 
 
                     fragment.submitOrder(callbackArg_0);
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // fragment
+                com.example.lunchtray.ui.order.CheckoutFragment fragment = mFragment;
+                // fragment != null
+                boolean fragmentJavaLangObjectNull = false;
+
+
+
+                fragmentJavaLangObjectNull = (fragment) != (null);
+                if (fragmentJavaLangObjectNull) {
+
+
+
+                    fragment.cancelOrder(callbackArg_0);
                 }
                 break;
             }

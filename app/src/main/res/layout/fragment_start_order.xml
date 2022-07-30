@@ -38,7 +38,6 @@
             android:layout_marginStart="@dimen/base_margin"
             android:layout_marginTop="@dimen/base_margin"
             android:layout_marginEnd="@dimen/base_margin"
-            android:onClick="@{view -> fragment.onStartOrder(view)}"
             android:text="@string/start_order"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
