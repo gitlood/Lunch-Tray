@@ -2632,6 +2632,7 @@ int id action_bar_root 0x7f08003a
 int id action_bar_spinner 0x7f08003b
 int id action_bar_subtitle 0x7f08003c
 int id action_bar_title 0x7f08003d
+int id action_checkoutFragment_to_startOrderFragment 0x7f08023d
 int id action_container 0x7f08003e
 int id action_context_bar 0x7f08003f
 int id action_divider 0x7f080040

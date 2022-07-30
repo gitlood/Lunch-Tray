@@ -21,6 +21,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.example.lunchtray.R
 import com.example.lunchtray.databinding.FragmentCheckoutBinding
 import com.example.lunchtray.model.OrderViewModel
@@ -43,10 +44,6 @@ class CheckoutFragment : Fragment() {
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     private val sharedViewModel: OrderViewModel by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -66,26 +63,25 @@ class CheckoutFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
             fragment = this@CheckoutFragment
-            // TODO: initialize the OrderViewModel and CheckoutFragment variables
         }
     }
 
     /**
      * Cancel the order and start over.
      */
-    fun cancelOrder() {
-        // TODO: Reset order in view model
-        // TODO: Navigate back to the [StartFragment] to start over
+    fun cancelOrder(view: View) {
+        sharedViewModel.resetOrder()
+        view.findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
     }
 
     /**
      * Submit order and navigate to home screen.
      */
-    fun submitOrder() {
+    fun submitOrder(view: View) {
         // Show snackbar to "confirm" order
         Snackbar.make(binding.root, R.string.submit_order, Snackbar.LENGTH_SHORT).show()
-        // TODO: Reset order in view model
-        // TODO: Navigate back to the [StartFragment] to start over
+        sharedViewModel.resetOrder()
+        view.findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
     }
 
     /**

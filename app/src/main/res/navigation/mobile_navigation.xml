@@ -46,7 +46,11 @@
         android:id="@+id/checkoutFragment"
         android:name="com.example.lunchtray.ui.order.CheckoutFragment"
         android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout" />
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/entreeMenuFragment"
         android:name="com.example.lunchtray.ui.order.EntreeMenuFragment"

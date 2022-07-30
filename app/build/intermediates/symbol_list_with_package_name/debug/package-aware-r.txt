@@ -2633,6 +2633,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_checkoutFragment_to_startOrderFragment
 id action_container
 id action_context_bar
 id action_divider
