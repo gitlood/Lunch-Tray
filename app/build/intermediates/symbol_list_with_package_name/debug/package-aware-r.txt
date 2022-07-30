@@ -2644,6 +2644,8 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_sideMenuFragment_to_accompanimentMenuFragment
+id action_sideMenuFragment_to_startOrderFragment
 id action_startOrderFragment_to_entreeMenuFragment
 id action_text
 id actions

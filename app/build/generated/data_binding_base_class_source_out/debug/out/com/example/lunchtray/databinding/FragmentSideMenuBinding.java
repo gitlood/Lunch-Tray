@@ -77,6 +77,18 @@ public abstract class FragmentSideMenuBinding extends ViewDataBinding {
   @Bindable
   protected SideMenuFragment mFragment;
 
+  @Bindable
+  protected String mSala;
+
+  @Bindable
+  protected String mButte;
+
+  @Bindable
+  protected String mPotatoe;
+
+  @Bindable
+  protected String mRic;
+
   protected FragmentSideMenuBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button cancelButton, View divider, Button nextButton, TextView potatoDescription,
       TextView potatoPrice, RadioButton potatoes, RadioButton rice, TextView riceDescription,
@@ -115,6 +127,34 @@ public abstract class FragmentSideMenuBinding extends ViewDataBinding {
   @Nullable
   public SideMenuFragment getFragment() {
     return mFragment;
+  }
+
+  public abstract void setSala(@Nullable String sala);
+
+  @Nullable
+  public String getSala() {
+    return mSala;
+  }
+
+  public abstract void setButte(@Nullable String butte);
+
+  @Nullable
+  public String getButte() {
+    return mButte;
+  }
+
+  public abstract void setPotatoe(@Nullable String potatoe);
+
+  @Nullable
+  public String getPotatoe() {
+    return mPotatoe;
+  }
+
+  public abstract void setRic(@Nullable String ric);
+
+  @Nullable
+  public String getRic() {
+    return mRic;
   }
 
   @NonNull
