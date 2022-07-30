@@ -78,7 +78,7 @@ public abstract class FragmentEntreeMenuBinding extends ViewDataBinding {
   protected EntreeMenuFragment mFragment;
 
   @Bindable
-  protected String mCauliflower;
+  protected String mCauli;
 
   protected FragmentEntreeMenuBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button cancelButton, RadioButton cauliflower, TextView cauliflowerDescription,
@@ -120,11 +120,11 @@ public abstract class FragmentEntreeMenuBinding extends ViewDataBinding {
     return mFragment;
   }
 
-  public abstract void setCauliflower(@Nullable String cauliflower);
+  public abstract void setCauli(@Nullable String cauli);
 
   @Nullable
-  public String getCauliflower() {
-    return mCauliflower;
+  public String getCauli() {
+    return mCauli;
   }
 
   @NonNull

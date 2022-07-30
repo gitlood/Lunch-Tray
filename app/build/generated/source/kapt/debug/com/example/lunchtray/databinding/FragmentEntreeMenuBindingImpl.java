@@ -22,11 +22,11 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
     private final android.widget.ScrollView mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback6;
+    private final android.view.View.OnClickListener mCallback8;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback9;
     @Nullable
     private final android.view.View.OnClickListener mCallback7;
-    @Nullable
-    private final android.view.View.OnClickListener mCallback5;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -73,9 +73,9 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
         this.subtotal.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback6 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
-        mCallback7 = new com.example.lunchtray.generated.callback.OnClickListener(this, 3);
-        mCallback5 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
+        mCallback8 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
+        mCallback9 = new com.example.lunchtray.generated.callback.OnClickListener(this, 3);
+        mCallback7 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -100,11 +100,11 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.fragment == variableId) {
-            setFragment((com.example.lunchtray.ui.order.EntreeMenuFragment) variable);
+        if (BR.cauli == variableId) {
+            setCauli((java.lang.String) variable);
         }
-        else if (BR.cauliflower == variableId) {
-            setCauliflower((java.lang.String) variable);
+        else if (BR.fragment == variableId) {
+            setFragment((com.example.lunchtray.ui.order.EntreeMenuFragment) variable);
         }
         else if (BR.viewModel == variableId) {
             setViewModel((com.example.lunchtray.model.OrderViewModel) variable);
@@ -115,20 +115,20 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
             return variableSet;
     }
 
-    public void setFragment(@Nullable com.example.lunchtray.ui.order.EntreeMenuFragment Fragment) {
-        this.mFragment = Fragment;
+    public void setCauli(@Nullable java.lang.String Cauli) {
+        this.mCauli = Cauli;
         synchronized(this) {
             mDirtyFlags |= 0x2L;
         }
-        notifyPropertyChanged(BR.fragment);
+        notifyPropertyChanged(BR.cauli);
         super.requestRebind();
     }
-    public void setCauliflower(@Nullable java.lang.String Cauliflower) {
-        this.mCauliflower = Cauliflower;
+    public void setFragment(@Nullable com.example.lunchtray.ui.order.EntreeMenuFragment Fragment) {
+        this.mFragment = Fragment;
         synchronized(this) {
             mDirtyFlags |= 0x4L;
         }
-        notifyPropertyChanged(BR.cauliflower);
+        notifyPropertyChanged(BR.fragment);
         super.requestRebind();
     }
     public void setViewModel(@Nullable com.example.lunchtray.model.OrderViewModel ViewModel) {
@@ -167,13 +167,13 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
         }
         java.lang.String viewModelMenuItemsChiliGetFormattedPrice = null;
         androidx.lifecycle.LiveData<java.lang.String> viewModelSubtotal = null;
+        java.lang.String cauli = mCauli;
         java.lang.String viewModelMenuItemsCauliflowerName = null;
         java.lang.String viewModelMenuItemsSkilletGetFormattedPrice = null;
         com.example.lunchtray.ui.order.EntreeMenuFragment fragment = mFragment;
         java.lang.String viewModelMenuItemsPastaGetFormattedPrice = null;
         java.lang.String viewModelMenuItemsPastaDescription = null;
         java.lang.String viewModelMenuItemsPastaName = null;
-        java.lang.String Cauliflower1 = mCauliflower;
         com.example.lunchtray.model.MenuItem viewModelMenuItemsPasta = null;
         java.lang.String viewModelMenuItemsSkilletName = null;
         java.lang.String viewModelMenuItemsCauliflowerDescription = null;
@@ -261,9 +261,9 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
         if ((dirtyFlags & 0x10L) != 0) {
             // api target 1
 
-            this.cancelButton.setOnClickListener(mCallback6);
-            this.cauliflower.setOnClickListener(mCallback5);
-            this.nextButton.setOnClickListener(mCallback7);
+            this.cancelButton.setOnClickListener(mCallback8);
+            this.cauliflower.setOnClickListener(mCallback7);
+            this.nextButton.setOnClickListener(mCallback9);
         }
         if ((dirtyFlags & 0x18L) != 0) {
             // api target 1
@@ -327,8 +327,8 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
             }
             case 1: {
                 // localize variables for thread safety
-                // cauliflower
-                java.lang.String Cauliflower1 = mCauliflower;
+                // cauli
+                java.lang.String cauli = mCauli;
                 // viewModel
                 com.example.lunchtray.model.OrderViewModel viewModel = mViewModel;
                 // viewModel != null
@@ -341,7 +341,7 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
 
 
 
-                    viewModel.setEntree(Cauliflower1);
+                    viewModel.setEntree(cauli);
                 }
                 break;
             }
@@ -351,8 +351,8 @@ public class FragmentEntreeMenuBindingImpl extends FragmentEntreeMenuBinding imp
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
         flag 0 (0x1L): viewModel.subtotal
-        flag 1 (0x2L): fragment
-        flag 2 (0x3L): cauliflower
+        flag 1 (0x2L): cauli
+        flag 2 (0x3L): fragment
         flag 3 (0x4L): viewModel
         flag 4 (0x5L): null
     flag mapping end*/

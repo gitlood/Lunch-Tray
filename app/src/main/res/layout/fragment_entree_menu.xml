@@ -29,7 +29,7 @@
             type="com.example.lunchtray.ui.order.EntreeMenuFragment" />
 
         <variable
-            name="cauliflower"
+            name="cauli"
             type="String" />
     </data>
 
@@ -57,7 +57,7 @@
                     android:id="@+id/cauliflower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="@{() -> viewModel.setEntree(cauliflower)}"
+                    android:onClick="@{() -> viewModel.setEntree(cauli)}"
                     android:text='@{viewModel.menuItems["cauliflower"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Entree 1" />
