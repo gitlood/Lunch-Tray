@@ -65,7 +65,7 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x4L;
         }
         requestRebind();
     }
@@ -83,7 +83,23 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.fragment == variableId) {
+            setFragment((com.example.lunchtray.ui.order.CheckoutFragment) variable);
+        }
+        else if (BR.viewModel == variableId) {
+            setViewModel((com.example.lunchtray.model.OrderViewModel) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setFragment(@Nullable com.example.lunchtray.ui.order.CheckoutFragment Fragment) {
+        this.mFragment = Fragment;
+    }
+    public void setViewModel(@Nullable com.example.lunchtray.model.OrderViewModel ViewModel) {
+        this.mViewModel = ViewModel;
     }
 
     @Override
@@ -107,7 +123,9 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): fragment
+        flag 1 (0x2L): viewModel
+        flag 2 (0x3L): null
     flag mapping end*/
     //end
 }

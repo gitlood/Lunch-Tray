@@ -21,6 +21,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
+import com.example.lunchtray.R
 import com.example.lunchtray.databinding.FragmentAccompanimentMenuBinding
 import com.example.lunchtray.model.OrderViewModel
 
@@ -47,7 +49,7 @@ class AccompanimentMenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAccompanimentMenuBinding.inflate(inflater, container, false)
         val root = binding.root
         return root
@@ -65,16 +67,19 @@ class AccompanimentMenuFragment : Fragment() {
     /**
      * Navigate to the checkout fragment.
      */
-    fun goToNextScreen() {
-        // TODO: Navigate to the CheckoutFragment
+    fun goToNextScreen(view: View) {
+        view.findNavController().navigate(R.id.action_accompanimentMenuFragment_to_checkoutFragment)
     }
 
     /**
      * Cancel the order and start over.
      */
-    fun cancelOrder() {
-        // TODO: Reset order in view model
-        // TODO: Navigate back to the [StartFragment] to start over
+    fun cancelOrder(view: View) {
+        sharedViewModel.resetOrder()
+        // Reset order in view model
+        view.findNavController().navigate(R.id.action_accompanimentMenuFragment_to_startOrderFragment)
+
+        //  Navigate back to the [StartFragment] to start over
     }
 
     /**

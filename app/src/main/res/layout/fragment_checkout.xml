@@ -20,9 +20,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_checkout"
     tools:context=".ui.order.CheckoutFragment">
-
-    <!-- TODO: Add the data binding variables of the type OrderViewModel and the CheckoutFragment -->
-
+<data>
+    <variable
+        name="viewModel"
+        type="com.example.lunchtray.model.OrderViewModel" />
+    <variable
+        name="fragment"
+        type="com.example.lunchtray.ui.order.CheckoutFragment" />
+</data>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
