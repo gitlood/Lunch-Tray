@@ -126,20 +126,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(11);
+    static final SparseArray<String> sKeys = new SparseArray<String>(14);
 
     static {
       sKeys.put(0, "_all");
-      sKeys.put(1, "butte");
-      sKeys.put(2, "cauli");
-      sKeys.put(3, "chil");
-      sKeys.put(4, "fragment");
-      sKeys.put(5, "past");
-      sKeys.put(6, "potatoe");
-      sKeys.put(7, "ric");
-      sKeys.put(8, "sala");
-      sKeys.put(9, "skille");
-      sKeys.put(10, "viewModel");
+      sKeys.put(1, "berrie");
+      sKeys.put(2, "brea");
+      sKeys.put(3, "butte");
+      sKeys.put(4, "cauli");
+      sKeys.put(5, "chil");
+      sKeys.put(6, "fragment");
+      sKeys.put(7, "past");
+      sKeys.put(8, "pickle");
+      sKeys.put(9, "potatoe");
+      sKeys.put(10, "ric");
+      sKeys.put(11, "sala");
+      sKeys.put(12, "skille");
+      sKeys.put(13, "viewModel");
     }
   }
 

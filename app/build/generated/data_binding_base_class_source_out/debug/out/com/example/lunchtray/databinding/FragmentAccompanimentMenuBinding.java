@@ -68,6 +68,15 @@ public abstract class FragmentAccompanimentMenuBinding extends ViewDataBinding {
   @Bindable
   protected AccompanimentMenuFragment mFragment;
 
+  @Bindable
+  protected String mBrea;
+
+  @Bindable
+  protected String mBerrie;
+
+  @Bindable
+  protected String mPickle;
+
   protected FragmentAccompanimentMenuBinding(Object _bindingComponent, View _root,
       int _localFieldCount, RadioGroup accompanimentOptions, RadioButton berries,
       TextView berriesDescription, TextView berriesPrice, RadioButton bread,
@@ -103,6 +112,27 @@ public abstract class FragmentAccompanimentMenuBinding extends ViewDataBinding {
   @Nullable
   public AccompanimentMenuFragment getFragment() {
     return mFragment;
+  }
+
+  public abstract void setBrea(@Nullable String brea);
+
+  @Nullable
+  public String getBrea() {
+    return mBrea;
+  }
+
+  public abstract void setBerrie(@Nullable String berrie);
+
+  @Nullable
+  public String getBerrie() {
+    return mBerrie;
+  }
+
+  public abstract void setPickle(@Nullable String pickle);
+
+  @Nullable
+  public String getPickle() {
+    return mPickle;
   }
 
   @NonNull
